@@ -14,4 +14,7 @@ function calculateAverage(data) {
     return sum / data.length;
 }
 
-console.log(calculateAverage(grades));
+function findTopStudent(data) {
+    const topStudent = data.sort((a, b) => b.score - a.score)[0]
+    return topStudent.name;
+}
