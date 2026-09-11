@@ -23,3 +23,20 @@ function filterFailed(data, passScore) {
         return item.name;
     });
 }
+
+function getLetter(score) {
+    if (score >= 90) {
+        return 'A'
+    } else if (score >= 75 && score <= 89) {
+        return 'B'
+    } else if (score < 75) {
+        return 'C'
+    }
+}
+
+function addLetterGrade(data) {
+    for (const i in data) {
+        let grade = data[i]
+        grade.letter = getLetter(grade.score)
+    }
+}
