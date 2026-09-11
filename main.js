@@ -1,10 +1,7 @@
-const grades = [
-    { name: "Макар", score: 85 },
-    { name: "Денис", score: 92 },
-    { name: "Анна", score: 78 },
-    { name: "Даша", score: 88 },
-    { name: "Студент_X", score: 45 }
-];
+const grades = [{name: "Макар", score: 85}, {name: "Денис", score: 92}, {name: "Анна", score: 78}, {
+    name: "Даша",
+    score: 88
+}, {name: "Студент_X", score: 45}];
 
 function calculateAverage(data) {
     let sum = 0
@@ -17,4 +14,12 @@ function calculateAverage(data) {
 function findTopStudent(data) {
     const topStudent = data.sort((a, b) => b.score - a.score)[0]
     return topStudent.name;
+}
+
+function filterFailed(data, passScore) {
+    return data.filter((item) => {
+        return passScore > item.score;
+    }).map(item => {
+        return item.name;
+    });
 }
